@@ -158,6 +158,19 @@ export const constantRoutes = [
       }
     ]
   },
+  {
+    path: '/user',
+    component: Layout,
+    redirect:"noRedirect",
+    children: [
+      {
+        path: 'index',
+        name: 'User',
+        component: () => import('@/views/user/index'),
+        meta: { title: '用户管理', icon: 'user' }
+      }
+    ]
+  },
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
